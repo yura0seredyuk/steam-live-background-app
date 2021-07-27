@@ -4,12 +4,16 @@
   "description": "Steam live background",
   "main": "server.js",
   "scripts": {
-    "backend-install": "npm install",
-    "frontend-install": "cd frontend && npm install",
+    "webpack-start-server": "webpack serve",
+    "webpack-watch": "webpack --watch",
+    "webpack-build-prod": "NODE_ENV=production webpack",
+    "webpack-build-dev": "webpack",
+    "backend-install-dependencies": "npm install",
+    "frontend-install-dependencies": "cd frontend && npm install",
     "server-start": "nodemon server.js",
     "frontend-start": "cd frontend && npm start",
     "dev": "concurrently \"npm run server-start\" \"npm run frontend-start\"",
-    "start": "node server.js",
+    "start-node-server": "node server.js",
     "prod": "concurrently \"npm run start\" \"npm run frontend-start\""
   },
   "keywords": [],
@@ -22,6 +26,12 @@
     "mongoose": "^5.13.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "babel-loader": "^8.2.2",
+    "nodemon": "^2.0.12",
+    "webpack": "^5.47.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
   }
 }
