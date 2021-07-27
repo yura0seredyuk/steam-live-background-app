@@ -1,0 +1,27 @@
+{
+  "name": "steam-live-background-app",
+  "version": "1.0.0",
+  "description": "Steam live background",
+  "main": "server.js",
+  "scripts": {
+    "backend-install": "npm install",
+    "frontend-install": "cd frontend && npm install",
+    "server-start": "nodemon server.js",
+    "frontend-start": "cd frontend && npm start",
+    "dev": "concurrently \"npm run server-start\" \"npm run frontend-start\"",
+    "start": "node server.js",
+    "prod": "concurrently \"npm run start\" \"npm run frontend-start\""
+  },
+  "keywords": [],
+  "author": "Yura Seredyuk <yura.seredyuk0@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^6.2.0",
+    "config": "^3.3.6",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
