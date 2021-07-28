@@ -14,7 +14,8 @@
     "frontend-start": "cd frontend && npm start",
     "dev": "concurrently \"npm run server-start\" \"npm run frontend-start\"",
     "start-node-server": "node server.js",
-    "prod": "concurrently \"npm run start\" \"npm run frontend-start\""
+    "prod": "concurrently \"npm run start\" \"npm run frontend-start\"",
+    "stats": "webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json"
   },
   "keywords": [],
   "author": "Yura Seredyuk <yura.seredyuk0@gmail.com>",
