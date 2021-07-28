@@ -5,3 +5,8 @@ body {
   font-family: "Andale Mono", "Al Bayan", sans-serif;
   font-size: var(--size);
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+}
