@@ -1,4 +1,6 @@
-// import './styles/main.css';
+import { render } from 'react-dom';
+import App from './ui/App';
 import './styles/index.scss';
 
-console.log("hello word")
+render (<App/>, document.querySelector("#root"));
+
