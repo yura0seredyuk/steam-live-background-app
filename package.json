@@ -1,7 +1,7 @@
 {
-  "name": "steam-live-background-app",
+  "name": "webpack_template",
   "version": "1.0.0",
-  "description": "Steam live background",
+  "description": "webpack_template",
   "main": "server.js",
   "scripts": {
     "webpack-start-server": "webpack serve",
