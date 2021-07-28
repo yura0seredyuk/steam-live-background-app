@@ -2,6 +2,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const path = require('path');
 
 let mode = 'development';
@@ -22,6 +23,27 @@ const Loader = () => {
     }
 
     return loader;
+}
+
+const Plugins = () => {
+    const plugins = [
+          new MiniCssExtractPlugin(),
+          new HtmlWebpackPlugin({
+              template: './src/index.html',
+          }),
+          new CleanWebpackPlugin(),
+          new CopyWebpackPlugin({
+              patterns: [
+                  { from: path.resolve(__dirname, 'src', 'favicon.ico'), to: path.resolve(__dirname, 'dist') },
+              ],
+          }),
+      ];
+
+    if (mode === 'production') {
+        plugins.push(new BundleAnalyzerPlugin());
+    }
+
+    return plugins;
 }
 
 module.exports = {
@@ -78,19 +100,8 @@ module.exports = {
             chunks: 'all'
         }
     },
-    plugins: [
-        new MiniCssExtractPlugin(),
-        new HtmlWebpackPlugin({
-            template: './src/index.html',
-        }),
-        new CleanWebpackPlugin(),
-        new CopyWebpackPlugin({
-            patterns: [
-                { from: path.resolve(__dirname, 'src', 'favicon.ico'), to: path.resolve(__dirname, 'dist') },
-            ],
-        }),
-    ],
-    devtool: mode === 'development' ? 'source-map' : '',
+    plugins: Plugins(),
+    devtool: 'source-map',
     devServer: {
         port: 3000,
         contentBase: './dist',
