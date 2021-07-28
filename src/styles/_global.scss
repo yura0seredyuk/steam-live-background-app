@@ -1,8 +1,9 @@
 @use 'variables';
+@import "roboto.css";
 
 body {
   color: variables.$color;
-  font-family: "Andale Mono", "Al Bayan", sans-serif;
+  font-family: "RobotoRegular", "Al Bayan", sans-serif;
   font-size: var(--size);
 }
 

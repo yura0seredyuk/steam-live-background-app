@@ -27,6 +27,10 @@ module.exports = {
                 type: 'asset/resource' // or asset
             },
             {
+                test: /\.(ttf|woff|woff2|eot)$/,
+                use: ['file-loader']
+            },
+            {
                 test: /\.s?css$/,
                 use: [
                     {
