@@ -14,6 +14,16 @@ if (process.env.NODE_ENV === 'production') {
 
 console.log('Mode:', mode);
 
+const Loader = () => {
+    const loader = ['babel-loader'];
+
+    if (mode === 'development') {
+        loader.push('eslint-loader')
+    }
+
+    return loader;
+}
+
 module.exports = {
     mode: mode,
     target: target,
@@ -48,16 +58,12 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader'
-                }
+                use: Loader()
             },
             {
                 test: /\.tsx?$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                },
+                use: Loader()
             }
         ]
     },
