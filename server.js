@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 
-app.use('/users/', require('./routes/usersRoute'));
+app.use('/api/users', require('./routes/usersRoute'));
 
 app.get('/api/customers', (req, res) => {
   const customers = [
@@ -13,17 +13,25 @@ app.get('/api/customers', (req, res) => {
   res.json(customers);
 })
 
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "OPTIONS, GET, POST, PUT, PATCH, DELETE"
+  );
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  next();
+});
+
 mongoose.connect('mongodb+srv://admin:admin@cluster0.1b6uf.mongodb.net/steam-profile-background-app?retryWrites=true&w=majority', {
   useNewUrlParser: "true",
   useUnifiedTopology: "true"
-})
-
-mongoose.connection.on('error', err => {
-  console.log('err', err);
-})
-
-mongoose.connection.on("connected", (err, res) => {
-  console.log("mongoose is connected");
+}, (err) => {
+  if (err) {
+    console.log('Err, could not connect to the database.');
+  } else {
+    console.log('Connected to the database.');
+  }
 })
 
 // example
@@ -31,7 +39,7 @@ mongoose.connection.on("connected", (err, res) => {
 const usersSchema = new mongoose.Schema({ name: { type: String, require: true } });
 const Users = mongoose.model('Users', usersSchema);
 
-app.get('/u',(req, res) => {
+app.get('/api/custom',(req, res) => {
   // Users.create({
   //   name: 'Denis'
   // })

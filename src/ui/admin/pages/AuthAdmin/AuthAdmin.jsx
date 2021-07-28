@@ -4,7 +4,7 @@ export default function AuthAdmin() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch('/u')
+    fetch('http://localhost:4000/api/custom')
       .then(res => {
         if (res.ok) return res.json();
       })

@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === 'production') {
     target = 'browserslist';
 }
 
-console.log('Mode:', mode);
+// console.log('Mode:', mode);
 
 const Loader = () => {
     const loader = ['babel-loader'];
@@ -103,6 +103,13 @@ module.exports = {
     plugins: Plugins(),
     devtool: 'source-map',
     devServer: {
+        proxy: {
+            '/api': {
+                target: 'http://localhost:4000',
+            },
+            pathRewrite: { '^/api': '' },
+        },
+        open: 'Google Chrome',
         port: 3000,
         contentBase: './dist',
         hot: true,
