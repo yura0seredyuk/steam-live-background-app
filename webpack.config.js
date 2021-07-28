@@ -1,6 +1,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 let mode = 'development';
@@ -11,13 +12,15 @@ if (process.env.NODE_ENV === 'production') {
     target = 'browserslist';
 }
 
+console.log('Mode:', mode);
+
 module.exports = {
     mode: mode,
     target: target,
 
     output: {
         path: path.resolve(__dirname, 'dist'),
-        assetModuleFilename: 'images/[hash][ext][query]'
+        assetModuleFilename: 'assets/[hash][ext][query]'
     },
 
     module: {
@@ -55,19 +58,34 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx'], // add other ./...
+        alias: {
+            '@': path.resolve(__dirname, 'src') // add new alias
+        }
+    },
+
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
     },
 
     plugins: [
         new MiniCssExtractPlugin(),
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: './src/index.html',
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: path.resolve(__dirname, 'src', 'favicon.ico'), to: path.resolve(__dirname, 'dist') },
+            ],
+        }),
     ],
 
     devtool: 'source-map',
     devServer: {
+        port: 3000,
         contentBase: './dist',
         hot: true,
         historyApiFallback: true,
