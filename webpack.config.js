@@ -17,12 +17,10 @@ console.log('Mode:', mode);
 module.exports = {
     mode: mode,
     target: target,
-
     output: {
         path: path.resolve(__dirname, 'dist'),
         assetModuleFilename: 'assets/[hash][ext][query]'
     },
-
     module: {
         rules: [
             {
@@ -53,23 +51,27 @@ module.exports = {
                 use: {
                     loader: 'babel-loader'
                 }
+            },
+            {
+                test: /\.tsx?$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                },
             }
         ]
     },
-
     resolve: {
         extensions: ['.js', '.jsx'], // add other ./...
         alias: {
             '@': path.resolve(__dirname, 'src') // add new alias
         }
     },
-
     optimization: {
         splitChunks: {
             chunks: 'all'
         }
     },
-
     plugins: [
         new MiniCssExtractPlugin(),
         new HtmlWebpackPlugin({
@@ -82,8 +84,7 @@ module.exports = {
             ],
         }),
     ],
-
-    devtool: 'source-map',
+    devtool: mode === 'development' ? 'source-map' : '',
     devServer: {
         port: 3000,
         contentBase: './dist',

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.scss';
-import Client from './client/Client.jsx';
+import Client from './client/Client';
 import Admin from './admin/pages/Admin/Admin.jsx';
 import AuthAdmin from './admin/pages/AuthAdmin/AuthAdmin.jsx';
 
