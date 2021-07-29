@@ -1,9 +1,12 @@
 {
   "parser": "babel-eslint",
   "rules": {
+    "no-console": "off",
+    "strict": ["error", "global"]
   },
   "env": {
     "es6": true,
-    "browser": true
+    "browser": true,
+    "node": true
   }
 }

@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const path = require('path');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 
 let mode = 'development';
 let target = 'web';
@@ -39,6 +40,10 @@ const Plugins = () => {
           }),
       ];
 
+    if (mode === 'development') {
+        plugins.push(new StylelintPlugin());
+    }
+
     if (mode === 'production') {
         plugins.push(new BundleAnalyzerPlugin());
     }
@@ -69,7 +74,7 @@ module.exports = {
                         options: {
                             name: '[name].[ext]',
                             outputPath: 'fonts/',
-                            publicPath: '../fonts/'
+                            publicPath: path.resolve(__dirname, 'dist', 'fonts/')
                         }
                     }
                 ]
