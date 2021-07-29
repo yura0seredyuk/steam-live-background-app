@@ -48,6 +48,7 @@ const Plugins = () => {
 
   if (mode === 'development') {
     plugins.push(new StylelintPlugin());
+    plugins.push()
   }
 
   if (mode === 'production') {
@@ -60,6 +61,7 @@ const Plugins = () => {
 module.exports = {
   mode: mode,
   target: target,
+  entry: ["babel-polyfill", "./src/index.js"],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name][hash].js'

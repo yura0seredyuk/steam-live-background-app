@@ -1,4 +1,5 @@
 const SET_COUNT = "SET_COUNT";
+const SET_REPOS = "SET_REPOS";
 
 const defaultState = {
   items: [],
@@ -13,8 +14,14 @@ export default function reposReducer(state = defaultState, action) {
         ...state,
         count: action.payload
       }
+    case SET_REPOS:
+      return {
+        ...state,
+        items: action.payload.items
+      }
     default: return state;
   }
 };
 
-export const setCount = (count) => ({ type:SET_COUNT, payload:count })
+export const setCount = (count) => ({ type:SET_COUNT, payload:count });
+export const setRepos = (repos) => ({ type:SET_REPOS, payload:repos });
