@@ -1,9 +1,9 @@
-import './Client.scss';
 import Customers from './components/Customers/Customers';
 import Users from './components/Users/Users';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import img from './images.png';
+import MainPage from '@/ui/client/pages/MainPage/MainPage';
+import './Client.scss';
 
 import {
   BrowserRouter as Router,
@@ -13,18 +13,18 @@ import {
 
 function App() {
   return (
-    <>
+    <section className='client__section'>
       <Header/>
       <Router>
         <Switch>
           <Route path="/customers"><Customers/></Route>
           <Route path="/users"><Users/></Route>
-          <Route exact path='/'>{() => <h1>Main page <img className='img' src={img} alt=""/></h1>}</Route>
+          <Route exact path='/'><MainPage/></Route>
           <Route>{() => <h1>404 page</h1>}</Route>
         </Switch>
       </Router>
       <Footer/>
-    </>
+    </section>
   );
 }
 

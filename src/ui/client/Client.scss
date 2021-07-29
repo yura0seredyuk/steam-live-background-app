@@ -1,4 +1,6 @@
-.img {
-  width: 30px;
-  height: 30px;
+.client__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
