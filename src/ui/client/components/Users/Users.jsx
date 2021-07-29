@@ -14,7 +14,7 @@ function Users() {
   return (
     <div>
       <ul>
-        {users.map((user, i) => <li key={i}>{user.name}</li>)}
+        {users.map((user, i) => <li key={i}>{user}</li>)}
       </ul>
     </div>
   )

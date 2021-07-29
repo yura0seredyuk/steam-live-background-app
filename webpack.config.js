@@ -51,17 +51,28 @@ module.exports = {
     target: target,
     output: {
         path: path.resolve(__dirname, 'dist'),
-        assetModuleFilename: 'assets/[hash][ext][query]'
+        publicPath: "http://localhost:3000/",
+        assetModuleFilename: 'assets/[name][ext][query]'
     },
     module: {
         rules: [
             {
                 test: /\.(png|jpe?g|gif|svg)$/i,
-                type: 'asset/resource' // or asset
+                type: 'asset/resource', // or asset
             },
             {
-                test: /\.(ttf|woff|woff2|eot)$/,
-                use: ['file-loader']
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)/,
+                type: 'asset/resource',
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'fonts/',
+                            publicPath: '../fonts/'
+                        }
+                    }
+                ]
             },
             {
                 test: /\.s?css$/,
@@ -69,7 +80,7 @@ module.exports = {
                     {
                         loader: MiniCssExtractPlugin.loader,
                         options: {
-                            publicPath: ''
+                            publicPath: '',
                         }
                     },
                     'css-loader',
@@ -109,7 +120,7 @@ module.exports = {
             },
             pathRewrite: { '^/api': '' },
         },
-        open: 'Google Chrome',
+        // open: 'Google Chrome',
         port: 3000,
         contentBase: './dist',
         hot: true,

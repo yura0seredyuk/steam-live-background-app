@@ -3,6 +3,7 @@ import Customers from './components/Customers/Customers';
 import Users from './components/Users/Users';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import img from './images.png';
 
 import {
   BrowserRouter as Router,
@@ -18,7 +19,7 @@ function App() {
         <Switch>
           <Route path="/customers"><Customers/></Route>
           <Route path="/users"><Users/></Route>
-          <Route exact path='/'>{() => <h1>Main page</h1>}</Route>
+          <Route exact path='/'>{() => <h1>Main page <img className='img' src={img} alt=""/></h1>}</Route>
           <Route>{() => <h1>404 page</h1>}</Route>
         </Switch>
       </Router>
