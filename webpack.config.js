@@ -56,8 +56,8 @@ module.exports = {
     target: target,
     output: {
         path: path.resolve(__dirname, 'dist'),
-        publicPath: "http://localhost:3000/",
-        assetModuleFilename: 'assets/[name][ext][query]'
+        // publicPath: "/dist/",
+        // assetModuleFilename: 'assets/[name][ext][query]'
     },
     module: {
         rules: [
