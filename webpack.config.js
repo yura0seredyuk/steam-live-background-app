@@ -68,22 +68,22 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
+        test: /\.(?:ico|png|jpe?g|gif|svg)$/i,
         type: 'asset/resource', // or asset
       },
       {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)/,
-        type: 'asset/resource',
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'fonts/',
-              publicPath: path.resolve(__dirname, 'dist', 'fonts/')
-            }
-          }
-        ]
+        test: /\.(woff(2)?|ttf|eot|otf|svg)(\?v=\d+\.\d+\.\d+)/,
+        type: 'asset/inline',
+        // use: [
+        //   {
+        //     loader: 'file-loader',
+        //     options: {
+        //       name: '[name].[ext]',
+        //       outputPath: 'fonts/',
+        //       publicPath: path.resolve(__dirname, 'dist', 'fonts/')
+        //     }
+        //   }
+        // ]
       },
       {
         test: /\.s?css$/,
