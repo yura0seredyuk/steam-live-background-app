@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setCount } from '@/reducers/reposReducer';
 import './MainPage.scss';
 import PropTypes from 'prop-types';
-import { getRepos } from '../../../../../actions/repos';
+import { getRepos } from '../../../../actions/repos';
 
 MainPage.propTypes = {
 

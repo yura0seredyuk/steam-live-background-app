@@ -1,6 +1,7 @@
 @use 'variables';
 @import "~normalize-css";
-@import "roboto.css";
+@import "fonts.css";
+@import "reset";
 
 body {
   color: variables.$color;

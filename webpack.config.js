@@ -64,7 +64,7 @@ module.exports = {
   entry: ["babel-polyfill", "./src/index.js"],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name][hash].js'
+    filename: '[name][contenthash].js'
     // publicPath: "/dist/",
     // assetModuleFilename: 'assets/[name][ext][query]'
   },
@@ -115,7 +115,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx'], // add other ./...
+    extensions: ['.js', '.jsx', 'scss', 'css'], // add other ./...
     alias: {
       '@': path.resolve(__dirname, 'src') // add new alias
     }

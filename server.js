@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 
-app.use('/api/users', require('./routes/usersRoute'));
+app.use('/api/users', require('./src/routes/usersRoute'));
 
 app.get('/api/customers', (req, res) => {
   const customers = [
