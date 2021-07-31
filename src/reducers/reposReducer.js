@@ -21,7 +21,7 @@ export default function reposReducer(state = defaultState, action) {
       }
     default: return state;
   }
-};
+}
 
 export const setCount = (count) => ({ type:SET_COUNT, payload:count });
 export const setRepos = (repos) => ({ type:SET_REPOS, payload:repos });

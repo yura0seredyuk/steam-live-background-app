@@ -2,11 +2,22 @@
   "parser": "babel-eslint",
   "rules": {
     "no-console": "off",
-    "strict": ["error", "global"]
+    "strict": ["error", "global"],
+    "react/prop-types": "warn",
+    "no-unused-vars": "warn"
   },
   "env": {
     "es6": true,
     "browser": true,
     "node": true
-  }
+  },
+  "plugins": [
+    "react"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"]
 }

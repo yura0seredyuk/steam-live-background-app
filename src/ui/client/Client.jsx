@@ -1,3 +1,4 @@
+import React from 'react';
 import Customers from './components/Customers/Customers';
 import Users from './components/Users/Users';
 import Header from './components/Header/Header';

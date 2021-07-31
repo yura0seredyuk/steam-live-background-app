@@ -3,14 +3,13 @@ import img from '@/images/images.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCount } from '@/reducers/reposReducer';
 import './MainPage.scss';
-import PropTypes from 'prop-types';
 import { getRepos } from '@/actions/repos';
 
 MainPage.propTypes = {
 
 };
 
-function MainPage(props) {
+function MainPage() {
   const dispatch = useDispatch();
   const count = useSelector(state => state.repos.count);
 

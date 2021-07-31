@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.scss';
 import Client from './client/Client';
 import Admin from './admin/pages/Admin/Admin.jsx';
-import AuthAdmin from './admin/pages/AuthAdmin/AuthAdmin.jsx';;
+import AuthAdmin from './admin/pages/AuthAdmin/AuthAdmin.jsx';
 
 import {
   BrowserRouter as Router,
