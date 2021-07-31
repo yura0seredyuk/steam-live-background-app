@@ -15,16 +15,16 @@ import {
 function App() {
   return (
     <section className='client__section'>
-      <Header/>
+      <Header />
       <Router>
         <Switch>
-          <Route path="/customers"><Customers/></Route>
-          <Route path="/users"><Users/></Route>
-          <Route exact path='/'><MainPage/></Route>
+          <Route path="/customers"><Customers /></Route>
+          <Route path="/users"><Users /></Route>
+          <Route exact path='/'><MainPage /></Route>
           <Route>{() => <h1>404 page</h1>}</Route>
         </Switch>
       </Router>
-      <Footer/>
+      <Footer />
     </section>
   );
 }

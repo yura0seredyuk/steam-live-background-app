@@ -27,8 +27,8 @@ function MainPage() {
   return (
     <div>
       {console.log(repos)}
-      <h1>Main page <img className='client__img' src={img} alt=""/></h1>
-      <button onClick={() => onCountClick()}>count</button>
+      <h1>Main page <img className='client__img' src={img} alt="" /></h1>
+      <button type='button' onClick={() => onCountClick()}>count</button>
       <div>{count}</div>
     </div>
   );

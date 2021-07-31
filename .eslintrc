@@ -3,8 +3,25 @@
   "rules": {
     "no-console": "off",
     "strict": ["error", "global"],
+    "no-unused-vars": "warn",
     "react/prop-types": "warn",
-    "no-unused-vars": "warn"
+    "react/button-has-type": "warn",
+    "react/default-props-match-prop-types": "warn",
+    "react/forbid-component-props": "warn",
+    "react/no-typos": "warn",
+    "react/no-unsafe": "warn",
+    "react/no-unused-prop-types": "warn",
+    "react/no-unused-state": "warn",
+    "react/self-closing-comp": "warn",
+    "react/void-dom-elements-no-children": "warn",
+    "react/jsx-key": "warn",
+    "react/jsx-no-useless-fragment": "warn",
+    "react/jsx-pascal-case": "warn",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-props-no-multi-spaces": "warn",
+    "react/jsx-space-before-closing": "warn",
+    "react/jsx-tag-spacing": "warn",
+    "react/jsx-wrap-multilines": "warn"
   },
   "env": {
     "es6": true,

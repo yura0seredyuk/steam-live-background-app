@@ -24,8 +24,8 @@ app.use((req, res, next) => {
 });
 
 mongoose.connect('mongodb+srv://admin:admin@cluster0.1b6uf.mongodb.net/steam-profile-background-app?retryWrites=true&w=majority', {
-  useNewUrlParser: "true",
-  useUnifiedTopology: "true"
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 }, (err) => {
   if (err) {
     console.log('Err, could not connect to the database.');

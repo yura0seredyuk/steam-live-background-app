@@ -14,14 +14,12 @@ function App() {
   const [auth, setAuth] = useState(false);
 
   return (
-    <>
-      <Router>
-        <Switch>
-          <Route path="/admin">{auth ? <AuthAdmin/> : <Admin setAuth={setAuth}/>}</Route>
-          <Route path="/"><Client/></Route>
-        </Switch>
-      </Router>
-    </>
+    <Router>
+      <Switch>
+        <Route path="/admin">{auth ? <AuthAdmin /> : <Admin setAuth={setAuth} />}</Route>
+        <Route path="/"><Client /></Route>
+      </Switch>
+    </Router>
   );
 }
 

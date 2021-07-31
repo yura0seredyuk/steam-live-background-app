@@ -5,5 +5,5 @@ import './styles/index.scss';
 import { Provider } from 'react-redux';
 import { store } from '@/reducers';
 
-render (<Provider store={store}><App/></Provider>, document.getElementById("root"));
+render (<Provider store={store}><App /></Provider>, document.getElementById("root"));
 
