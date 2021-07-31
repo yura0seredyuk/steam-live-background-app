@@ -19,14 +19,8 @@ if (process.env.NODE_ENV === 'production') {
   target = 'browserslist';
 }
 
-// console.log('Mode:', mode);
-
 const Loader = () => {
   const loader = ['babel-loader'];
-
-  if (mode === 'development') {
-    loader.push('eslint-loader')
-  }
 
   return loader;
 }
@@ -65,8 +59,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name][contenthash].js'
-    // publicPath: "/dist/",
-    // assetModuleFilename: 'assets/[name][ext][query]'
   },
   module: {
     rules: [
@@ -77,16 +69,6 @@ module.exports = {
       {
         test: /\.(woff(2)?|ttf|eot|otf|svg)(\?v=\d+\.\d+\.\d+)/,
         type: 'asset/inline',
-        // use: [
-        //   {
-        //     loader: 'file-loader',
-        //     options: {
-        //       name: '[name].[ext]',
-        //       outputPath: 'fonts/',
-        //       publicPath: path.resolve(__dirname, 'dist', 'fonts/')
-        //     }
-        //   }
-        // ]
       },
       {
         test: /\.s?css$/,
@@ -137,7 +119,6 @@ module.exports = {
       },
       pathRewrite: { '^/api': '' },
     },
-    // open: 'Google Chrome',
     port: 3000,
     contentBase: './dist',
     hot: true,

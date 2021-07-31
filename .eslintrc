@@ -1,5 +1,5 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "rules": {
     "no-console": "off",
     "strict": ["error", "global"],
@@ -19,7 +19,6 @@
     "react/jsx-pascal-case": "warn",
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-props-no-multi-spaces": "warn",
-    "react/jsx-space-before-closing": "warn",
     "react/jsx-tag-spacing": "warn",
     "react/jsx-wrap-multilines": "warn"
   },
