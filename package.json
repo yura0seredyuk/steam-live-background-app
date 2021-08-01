@@ -23,8 +23,11 @@
     "concurrently": "^6.2.0",
     "config": "^3.3.6",
     "express": "^4.17.1",
+    "i18next": "^20.3.5",
+    "i18next-browser-languagedetector": "^6.1.2",
     "mongoose": "^5.13.3",
     "normalize-css": "^2.3.1",
+    "react-i18next": "^9.0.10",
     "redux-devtools-extension": "^2.13.9",
     "webpack-bundle-analyzer": "^4.4.2"
   },

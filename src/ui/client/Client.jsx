@@ -11,11 +11,13 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import LanguageToggle from '@/ui/client/components/LanguageToggle/LanguageToggle';
 
 function App() {
   return (
     <section className='client__section'>
       <Header />
+      <LanguageToggle />
       <Router>
         <Switch>
           <Route path="/customers"><Customers /></Route>
