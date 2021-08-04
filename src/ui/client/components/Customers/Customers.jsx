@@ -13,6 +13,7 @@ const Customers = () => {
   return (
     <div className='root'>
       <h2 className='title'>Customers</h2>
+      {/* eslint-disable-next-line no-console */}
       {console.log(customers)}
       <ul>
         {customers.map(customer => (

@@ -9,6 +9,7 @@ export default function AuthAdmin() {
         if (res.ok) return res.json();
       })
       .then(jsonRes => setUsers(jsonRes))
+      // eslint-disable-next-line no-console
       .catch(err => console.log(err))
   }, [])
 

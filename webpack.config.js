@@ -22,6 +22,10 @@ if (process.env.NODE_ENV === 'production') {
 const Loader = () => {
   const loader = ['babel-loader'];
 
+  if (mode === 'development') {
+    loader.push('eslint-loader')
+  }
+
   return loader;
 }
 

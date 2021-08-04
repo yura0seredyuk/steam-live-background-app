@@ -11,8 +11,10 @@ function MainPage({ t }) {
   const dispatch = useDispatch();
   const count = useSelector(state => state.repos.count);
 
+  const randomNumber = 5;
+
   function onCountClick() {
-    dispatch(setCount(5));
+    dispatch(setCount(randomNumber));
   }
 
 
@@ -24,6 +26,7 @@ function MainPage({ t }) {
 
   return (
     <div>
+      {/* eslint-disable-next-line no-console */}
       {console.log(repositories)}
       <h1>Main page <img className='client__img' src={img} alt="" /></h1>
       <button type='button' onClick={() => onCountClick()}>count</button>
