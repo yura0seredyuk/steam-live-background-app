@@ -8,7 +8,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route
-} from "react-router-dom";
+} from 'react-router-dom';
 
 function App() {
   const [auth, setAuth] = useState(false);
@@ -16,8 +16,8 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/admin">{auth ? <AuthAdmin /> : <Admin setAuth={setAuth} />}</Route>
-        <Route path="/"><Client /></Route>
+        <Route path='/admin'>{auth ? <AuthAdmin /> : <Admin setAuth={setAuth} />}</Route>
+        <Route path='/'><Client /></Route>
       </Switch>
     </Router>
   );

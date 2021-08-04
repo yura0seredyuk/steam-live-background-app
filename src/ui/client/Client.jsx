@@ -10,7 +10,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-} from "react-router-dom";
+} from 'react-router-dom';
 import LanguageToggle from '@/ui/client/components/LanguageToggle/LanguageToggle';
 
 function App() {
@@ -20,8 +20,8 @@ function App() {
       <LanguageToggle />
       <Router>
         <Switch>
-          <Route path="/customers"><Customers /></Route>
-          <Route path="/users"><Users /></Route>
+          <Route path='/customers'><Customers /></Route>
+          <Route path='/users'><Users /></Route>
           <Route exact path='/'><MainPage /></Route>
           <Route>{() => <h1>404 page</h1>}</Route>
         </Switch>

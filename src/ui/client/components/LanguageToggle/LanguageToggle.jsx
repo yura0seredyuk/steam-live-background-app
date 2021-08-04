@@ -8,9 +8,9 @@ function LanguageToggle () {
 
   return (
     <div>
-      <button type="button" onClick={() => changeLanguage('ua')}>ua</button>
-      <button type="button" onClick={() => changeLanguage('ru')}>ru</button>
-      <button type="button" onClick={() => changeLanguage('en')}>en</button>
+      <button type='button' onClick={() => changeLanguage('ua')}>ua</button>
+      <button type='button' onClick={() => changeLanguage('ru')}>ru</button>
+      <button type='button' onClick={() => changeLanguage('en')}>en</button>
     </div>
   )
 }

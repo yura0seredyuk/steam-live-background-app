@@ -28,7 +28,7 @@ function MainPage({ t }) {
     <div>
       {/* eslint-disable-next-line no-console */}
       {console.log(repositories)}
-      <h1>Main page <img className='client__img' src={img} alt="" /></h1>
+      <h1>Main page <img className='client__img' src={img} alt='' /></h1>
       <button type='button' onClick={() => onCountClick()}>count</button>
       <h2>{t('welcome')}</h2>
       <div>{count}</div>
@@ -39,5 +39,5 @@ function MainPage({ t }) {
 export default withNamespaces()(MainPage);
 
 MainPage.propTypes = {
-  t: PropTypes.object
+  t : PropTypes.object
 };

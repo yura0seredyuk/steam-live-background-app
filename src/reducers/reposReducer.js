@@ -1,5 +1,5 @@
-const SET_COUNT = "SET_COUNT";
-const SET_REPOS = "SET_REPOS";
+const SET_COUNT = 'SET_COUNT';
+const SET_REPOS = 'SET_REPOS';
 
 const defaultState = {
   items: [],

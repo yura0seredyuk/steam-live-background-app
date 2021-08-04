@@ -6,5 +6,5 @@ import { Provider } from 'react-redux';
 import { store } from '@/reducers';
 import './language/i18n';
 
-render (<Provider store={store}><App /></Provider>, document.getElementById("root"));
+render (<Provider store={store}><App /></Provider>, document.getElementById('root'));
 
